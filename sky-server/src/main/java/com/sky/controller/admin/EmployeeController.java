@@ -118,7 +118,7 @@ public class EmployeeController {
      */
     @PostMapping("/status/{status}")
     @ApiOperation("启用/禁用员工")
-    public Result updateStatus(@RequestParam("status") Integer status, @RequestParam("id") Long id) {
+    public Result updateStatus(@PathVariable("status") Integer status, @RequestParam("id") Long id) {
         Employee employee = new Employee();
         employee.setId(id);
         employee.setStatus(status);

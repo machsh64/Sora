@@ -7,8 +7,8 @@
     <select id="pageQuery" resultType="com.sky.entity.Employee">
         SELECT * FROM employee
         <where>
-            <if test="employee.name != null and employee.name != ''">
-                AND name LIKE concat('%',#{employee.name},'%')
+            <if test="name != null and name != ''">
+                AND name LIKE concat('%',#{name},'%')
             </if>
         </where>
         ORDER BY create_time DESC
