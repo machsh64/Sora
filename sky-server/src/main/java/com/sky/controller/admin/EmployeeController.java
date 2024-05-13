@@ -74,7 +74,7 @@ public class EmployeeController {
      */
     @PostMapping("/logout")
     @ApiOperation("员工退出")
-    public Result<String> logout() {
+    public Result logout() {
 
         // 用户退出登录时,一处线程中的id
         BaseContext.removeCurrentId();
@@ -89,7 +89,7 @@ public class EmployeeController {
      */
     @PostMapping
     @ApiOperation("添加员工")
-    public Result<String> save(@RequestBody EmployeeDTO employeeDTO) {
+    public Result save(@RequestBody EmployeeDTO employeeDTO) {
         log.info("添加员工：{}", employeeDTO);
 
         // 设置账号的状态,默认正常状态
@@ -99,15 +99,16 @@ public class EmployeeController {
 
     /**
      * 员工分页查询
+     *
      * @param employeePageQueryDTO
      * @return
      */
     @GetMapping("/page")
     @ApiOperation("员工分页查询")
-    public Result<PageResult> getPage(EmployeePageQueryDTO employeePageQueryDTO)  {
+    public Result<PageResult> getPage(EmployeePageQueryDTO employeePageQueryDTO) {
         log.info("员工分页查询, 参数为：{}", employeePageQueryDTO);
-        PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
 
+        PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
     }
 
@@ -119,13 +120,37 @@ public class EmployeeController {
     @PostMapping("/status/{status}")
     @ApiOperation("启用/禁用员工")
     public Result updateStatus(@PathVariable("status") Integer status, @RequestParam("id") Long id) {
-        Employee employee = new Employee();
-        employee.setId(id);
-        employee.setStatus(status);
+        log.info(status == 1 ? "启用" : "禁用" + "员工, 参数为：id: {} ", id);
 
-        log.info(status==1 ? "启用" : "禁用" +"员工, 参数为：{}", employee);
-        employeeService.updateStatus(employee);
+        employeeService.updateStatus(status,id);
         return Result.success();
     }
+
+    /**
+     * 根据id获取员工数据
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id获取员工数据")
+    public Result<Employee> getById(@PathVariable("id") Long id) {
+
+        Employee employee = employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+
+    /**
+     * 更新员工信息
+     * @param employeeDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("更新员工信息")
+    public Result update(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("更新员工信息, 参数为：{}", employeeDTO);
+
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
+
 
 }

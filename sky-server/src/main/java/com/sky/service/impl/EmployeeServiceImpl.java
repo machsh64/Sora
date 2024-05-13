@@ -106,16 +106,41 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     /**
      * 启用/禁用员工
-     * @param employee
+     * @param status, id
      */
     @Override
-    public void updateStatus(Employee employee) {
-        // 设置当前记录的修改时间和修改人id
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+    public void updateStatus(Integer status, Long id) {
+        Employee employee = Employee.builder()
+                .status(status)
+                .id(id)
+                .updateTime(LocalDateTime.now())
+                .updateUser(BaseContext.getCurrentId())
+                .build();
 
-        employeeMapper.updateStatus(employee);
+        employeeMapper.update(employee);
     }
 
+    public Employee getById(Long id){
+        // 查询员工信息
+        Employee employee = employeeMapper.getById(id);
+        employee.setPassword("******");
+        return employee;
+    }
 
+    /**
+     * 更新员工信息
+     * @param employeeDTO
+     */
+    @Override
+    public void update(EmployeeDTO employeeDTO) {
+        Employee employee = new Employee();
+        // 对象属性拷贝
+        BeanUtils.copyProperties(employeeDTO, employee);
+        // 设置当前记录的修改时间
+        employee.setUpdateTime(LocalDateTime.now());
+        // 设置当前记录修改人id
+        employee.setUpdateUser(BaseContext.getCurrentId());
+
+        employeeMapper.update(employee);
+    }
 }

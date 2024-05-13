@@ -39,7 +39,8 @@ public interface EmployeeMapper {
      * 启用/禁用员工
      * @param employee
      */
-    @Update("update employee set status = #{status}, update_time = #{updateTime}, update_user = #{updateUser} where id = #{id}")
-    void updateStatus(Employee employee);
+    void update(Employee employee);
 
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Long id);
 }
