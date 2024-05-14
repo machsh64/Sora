@@ -5,3 +5,5 @@ environment
 *.class
 *Test.java
 **/test/
+# Ignore application-dev.yml
+application-dev.yml
