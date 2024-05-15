@@ -4,6 +4,8 @@ import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
 import com.sky.result.PageResult;
 
+import java.util.List;
+
 /**
  * @program: sky-take-out
  * @author: Ren  https://github.com/machsh64
@@ -25,4 +27,10 @@ public interface DishService {
      * @return
      */
     PageResult getDishPage(DishPageQueryDTO dishPageQueryDTO);
+
+    /**
+     * 菜品的批量删除
+     * @param ids
+     */
+    void deleteBatch(List<Long> ids);
 }

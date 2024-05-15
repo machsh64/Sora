@@ -1,0 +1,167 @@
+[33mcommit de0571032dbb3a5ef83394faf28d313aeedf90d3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:57:22 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit ce9998bb68aa1f16039d2f89d93061f09ae1f225[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:51:57 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit ff83bf23d99547aba80c2554bc0f32f2679f2e64[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:50:09 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit 22898abf6032a0a683ffbacdec6a25dcfecd5c50[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:43:41 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit 99f5bdb488a1f7a3d448658066ac5d8fe4075b5f[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:34:16 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit 6a26cd99f1abdce4bf3b7aea1604a14b6d749f31[m
+Author: machsh <machshren@gmail.com>
+Date:   Tue May 14 23:30:20 2024 +0800
+
+    dish*flavor&upload
+
+[33mcommit 97e38437b9fe574dedd7a08cc3fcd14c50987ed9[m[33m ([m[1;31mmachsh/master[m[33m)[m
+Author: machsh <machshren@gmail.com>
+Date:   Mon May 13 23:02:59 2024 +0800
+
+    AutoFill
+
+[33mcommit 91ae9f5e538d43280c48c4ca08c9db061ab26f4d[m
+Author: machsh <machshren@gmail.com>
+Date:   Mon May 13 21:57:07 2024 +0800
+
+    category
+
+[33mcommit 25ae23a007aee1d7119d3fde4d5bc69ca8e5c926[m
+Author: machsh <machshren@gmail.com>
+Date:   Mon May 13 21:46:26 2024 +0800
+
+    editEmp
+
+[33mcommit c55198f818bbe8c14b5ce690d5f9352bc634c8cf[m
+Author: machsh <machshren@gmail.com>
+Date:   Mon May 13 20:20:37 2024 +0800
+
+    status-page
+
+[33mcommit 5be1ec5de5af25108f7b33754854680fc650c355[m
+Author: machsh <machshren@gmail.com>
+Date:   Sun May 12 23:23:26 2024 +0800
+
+    empPage&Status&save
+
+[33mcommit 63287b0ebeaecf1534833e02eeaed8545803f39d[m
+Author: machsh <machshren@gmail.com>
+Date:   Sat May 11 19:55:44 2024 +0800
+
+    config
+
+[33mcommit a27b1e19e6d6105da970c63ee2c8ca6ad1a690a9[m
+Author: machsh <machshren@gmail.com>
+Date:   Sat May 11 17:31:06 2024 +0800
+
+    fst
+
+[33mcommit 43f0d9a3ece3bd5f481150318aa62c06b24757d2[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:29:41 2024 +0800
+
+    Delete pom.xml
+
+[33mcommit f7c4e5148ef218fdbe24a511efc2aef32bb06034[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:29:32 2024 +0800
+
+    Delete mvnw.cmd
+
+[33mcommit b5306c4e4f31f7f82fa83c5b9bb0cc297e80583b[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:29:24 2024 +0800
+
+    Delete mvnw
+
+[33mcommit fd1937847f1fa45ec9914cd3112a9b6a58946efa[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:29:16 2024 +0800
+
+    Delete .gitignore
+
+[33mcommit 44111d31f1ae49fd05ca19d56f6a3acb7883f267[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:29:06 2024 +0800
+
+    Delete src directory
+
+[33mcommit f13f3534c92feca933298da8b390e1342ccdd16e[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:28:52 2024 +0800
+
+    Delete .mvn/wrapper directory
+
+[33mcommit bffe3dfacc56e0a5148f1171d560139fa80cb0fc[m
+Author: machsh <machshren@gmail.com>
+Date:   Sat May 11 17:26:40 2024 +0800
+
+    fit
+
+[33mcommit 426c495c7fcdec45e9369a57399bb2f960295626[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:54 2024 +0800
+
+    Delete .gitignore
+
+[33mcommit b312ddf388a4bdc0c476e944be6945527d731ccd[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:43 2024 +0800
+
+    Delete pom.xml
+
+[33mcommit 5359fd52d5c96666d8595033b84a6b61d7f0937b[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:34 2024 +0800
+
+    Delete mvnw.cmd
+
+[33mcommit 12d2742a6c07efffd6f558b684fe8039ebdf3707[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:26 2024 +0800
+
+    Delete mvnw
+
+[33mcommit 47ca8e51b343a99683db00d4558e2a6ac25fbb40[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:11 2024 +0800
+
+    Delete .mvn directory
+
+[33mcommit 4da57fca4824e584f9bd4225ba2b388ef3a418b1[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Sat May 11 17:24:02 2024 +0800
+
+    Delete src directory
+
+[33mcommit f3cb891964f280c3d43fea2e3f558d5ada12fc82[m
+Author: machsh <machshren@gmail.com>
+Date:   Fri May 10 22:21:59 2024 +0800
+
+    fst
+
+[33mcommit c954f739ad86393d769d65674e7dc1a3c56e136a[m
+Author: Machsh Ren <machshren@gmail.com>
+Date:   Fri May 10 22:20:44 2024 +0800
+
+    Initial commit
