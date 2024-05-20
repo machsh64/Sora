@@ -188,9 +188,8 @@ public class DishServiceImpl implements DishService {
      * @return
      */
     public List<DishVO> listWithFlavor(Dish dish) {
-        //List<Dish> dishList = dishMapper.list(dish);
 
-        List<Dish> dishList = dishMapper.getBatchByCId(dish.getCategoryId());
+        List<Dish> dishList = dishMapper.list(dish);
 
         List<DishVO> dishVOList = new ArrayList<>();
 
@@ -206,5 +205,20 @@ public class DishServiceImpl implements DishService {
         }
 
         return dishVOList;
+    }
+
+    /**
+     * 设置菜品的启售停售
+     * @param status
+     * @param id
+     */
+    @Override
+    public void setStatus(Integer status, Long id) {
+        log.info("设置菜品状态，status={},id={}",status,id);
+        Dish dish = Dish.builder()
+                .id(id)
+                .status(status)
+                .build();
+        dishMapper.update(dish);
     }
 }

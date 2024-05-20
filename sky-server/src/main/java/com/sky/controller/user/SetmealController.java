@@ -34,6 +34,7 @@ public class SetmealController {
         setmeal.setCategoryId(categoryId);
         setmeal.setStatus(StatusConstant.ENABLE);
 
+        // TODO 这几个动态查询有问题
         List<Setmeal> list = setmealService.list(setmeal);
         return Result.success(list);
     }

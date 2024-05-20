@@ -3,6 +3,7 @@ package com.sky.controller.admin;
 import com.sky.constant.MessageConstant;
 import com.sky.result.Result;
 import com.sky.utils.AliOssUtil;
+import com.sky.utils.MinioUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,9 @@ public class CommonController {
     @Autowired
     private AliOssUtil aliOssUtil;
 
+    //@Autowired
+    private MinioUtil minioUtil;
+
     @PostMapping("/upload")
     @ApiOperation("文件上传")
     public Result<String> upload(@RequestParam("file") MultipartFile multipartFile) {
@@ -50,4 +54,26 @@ public class CommonController {
         return Result.error(MessageConstant.UPLOAD_FAILED);
     }
 
+    /**
+     * 文件上传
+     * @param file
+     * @return
+     */
+    // TODO 此方法可用于服务器部署时打开, 用本地oss节流
+    @ApiOperation("文件上传接口")
+    //@PostMapping("/upload")
+    public Result<String> uploadMin(@RequestParam("file") MultipartFile file) {
+        log.info("文件上传 ： {}", file);
+        String originalFilename = file.getOriginalFilename();
+        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+        String objectName = UUID.randomUUID() + extension;
+        String filePath = null;
+        try {
+            filePath = minioUtil.upload(file, objectName);
+            return Result.success(filePath);
+        } catch (Exception e) {
+            log.error("文件上传失败： {}", e);
+            return Result.error(MessageConstant.UPLOAD_FAILED);
+        }
+    }
 }

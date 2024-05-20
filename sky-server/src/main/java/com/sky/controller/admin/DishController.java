@@ -95,4 +95,16 @@ public class DishController {
         return Result.success(dishVOList);
     }
 
+    /**
+     * 设置菜品的停售启售
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("设置启售停售")
+    public Result setStatus(@PathVariable("status") Integer status, Long id) {
+
+        dishService.setStatus(status,id);
+        return Result.success();
+    }
+
 }

@@ -57,6 +57,11 @@ sky:
     accessKeyId: ${sky.alioss.accessKeyId}
     accessKeySecret: ${sky.alioss.accessKeySecret}
     bucketName: ${sky.alioss.bucket-name}
+  minio:
+    endpoint: ${sky.minio.endpoint}
+    accessKeyId: ${sky.minio.accessKeyId}
+    accessKeySecret: ${sky.minio.accessKeySecret}
+    bucketName: ${sky.minio.bucket-name}
   wechat:
     appid: ${sky.wechat.appid}
     secret: ${sky.wechat.secret}
