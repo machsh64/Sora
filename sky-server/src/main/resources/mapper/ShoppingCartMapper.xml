@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace对应mapper接口的全类型 -->
+<mapper namespace="com.sky.mapper.ShoppingCartMapper">
+    <!-- sql语句填写区 例：<select id="mapper接口中的方法" resultType="数据类型全类名/别名">sql语句</select>-->
+
+    <select id="list" resultType="com.sky.entity.ShoppingCart">
+        SELECT * FROM shopping_cart
+        <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="setmealId != null">
+                and setmeal_id = #{setmealId}
+            </if>
+            <if test="dishId != null">
+                and dish_id = #{dishId}
+            </if>
+            <if test="dishFlavor != null">
+                and dish_flavor = #{dishFlavor}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addToCart" parameterType="com.sky.entity.ShoppingCart">
+        INSERT INTO shopping_cart (name, user_id, setmeal_id, dish_id, dish_flavor, number, amount, image, create_time)
+        VALUES (#{name}, #{userId}, #{setmealId}, #{dishId}, #{dishFlavor}, #{number}, #{amount}, #{image}, #{createTime})
+    </insert>
+
+</mapper>
