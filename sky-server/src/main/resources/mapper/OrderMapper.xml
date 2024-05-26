@@ -62,10 +62,10 @@
                 AND status = #{status}
             </if>
             <if test="beginTime != null">
-                AND order_time &gt;= #{beginTime}
+                AND order_time &gt; #{beginTime}
             </if>
             <if test="endTime != null">
-                AND order_time &lt;= #{endTime}
+                AND order_time &lt; #{endTime}
             </if>
         </where>
         ORDER BY order_time DESC
@@ -85,5 +85,37 @@
                 AND status = #{status}
             </if>
         </where>
+    </select>
+
+    <select id="getCountByMap" resultType="java.lang.Integer">
+        SELECT COUNT(id) FROM orders
+        <where>
+            <if test="begin != null">
+                AND order_time &gt; #{begin}
+            </if>
+            <if test="end != null">
+                AND order_time &lt; #{end}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+    </select>
+
+    <select id="getTop10" resultType="com.sky.dto.GoodsSalesDTO">
+        SELECT od.name, SUM(od.number) AS number
+        FROM order_detail AS od,
+        orders AS o
+        WHERE o.id = od.order_id
+        AND o.status = 5
+        <if test="begin != null">
+            AND o.order_time &gt; #{begin}
+        </if>
+        <if test="end != null">
+            AND o.order_time &lt; #{end}
+        </if>
+        GROUP BY od.name
+        ORDER BY number DESC
+        LIMIT 0,10
     </select>
 </mapper>
