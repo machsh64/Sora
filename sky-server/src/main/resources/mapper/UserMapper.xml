@@ -11,4 +11,16 @@
         VALUES (#{openid}, #{name}, #{phone}, #{sex}, #{idNumber}, #{avatar}, #{createTime})
     </insert>
 
+    <select id="getUserCByMap" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM user
+        <where>
+            <if test="begin != null">
+                AND create_time &gt; #{begin}
+            </if>
+            <if test="end != null">
+                AND create_time &lt; #{end}
+            </if>
+        </where>
+    </select>
+
 </mapper>

@@ -4,6 +4,8 @@ import com.sky.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Map;
+
 /**
  * @program: sky-take-out
  * @author: Ren  https://github.com/machsh64
@@ -34,4 +36,11 @@ public interface UserMapper {
      */
     @Select("SELECT * FROM user WHERE id = #{userId}")
     User getById(Long userId);
+
+    /**
+     * 获取用户数量
+     * @param map
+     * @return
+     */
+    Integer getUserCByMap(Map map);
 }
