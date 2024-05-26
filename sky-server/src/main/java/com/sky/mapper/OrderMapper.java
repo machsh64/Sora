@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: sky-take-out
@@ -62,4 +63,11 @@ public interface OrderMapper {
      */
     @Select("select * from orders where status = #{status} and order_time < #{orderTime}")
     List<Orders> getTimeOutOrder(Integer status, LocalDateTime orderTime);
+
+    /**
+     * 根据map查询营业额
+     * @param map
+     * @return
+     */
+    Double getSumAmountByMap(Map map);
 }

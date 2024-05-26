@@ -50,24 +50,40 @@
         SELECT * FROM orders
         <where>
             <if test="number != null and number!=''">
-                and number like concat('%',#{number},'%')
+                AND number like concat('%',#{number},'%')
             </if>
             <if test="phone != null and phone!=''">
-                and phone like concat('%',#{phone},'%')
+                AND phone like concat('%',#{phone},'%')
             </if>
             <if test="userId != null">
-                and user_id = #{userId}
+                AND user_id = #{userId}
             </if>
             <if test="status != null">
-                and status = #{status}
+                AND status = #{status}
             </if>
             <if test="beginTime != null">
-                and order_time &gt;= #{beginTime}
+                AND order_time &gt;= #{beginTime}
             </if>
             <if test="endTime != null">
-                and order_time &lt;= #{endTime}
+                AND order_time &lt;= #{endTime}
             </if>
         </where>
-        order by order_time desc
+        ORDER BY order_time DESC
+    </select>
+
+    <select id="getSumAmountByMap" resultType="java.lang.Double">
+        SELECT SUM(amount)
+        FROM orders
+        <where>
+            <if test="begin != null">
+                AND order_time &gt; #{begin}
+            </if>
+            <if test="end != null">
+                AND order_time &lt; #{end}
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
     </select>
 </mapper>
