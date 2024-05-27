@@ -30,10 +30,10 @@ public class CommonController {
     @Autowired
     private AliOssUtil aliOssUtil;
 
-    //@Autowired
+    @Autowired
     private MinioUtil minioUtil;
 
-    @PostMapping("/upload")
+    @PostMapping("/uploadali")
     @ApiOperation("文件上传")
     public Result<String> upload(@RequestParam("file") MultipartFile multipartFile) {
         log.info("文件上传: {}", multipartFile);
@@ -61,7 +61,7 @@ public class CommonController {
      */
     // TODO 此方法可用于服务器部署时打开, 用本地oss节流
     @ApiOperation("文件上传接口")
-    //@PostMapping("/upload")
+    @PostMapping("/upload")
     public Result<String> uploadMin(@RequestParam("file") MultipartFile file) {
         log.info("文件上传 ： {}", file);
         String originalFilename = file.getOriginalFilename();

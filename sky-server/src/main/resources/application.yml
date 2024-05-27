@@ -59,6 +59,7 @@ sky:
     bucketName: ${sky.alioss.bucket-name}
   minio:
     endpoint: ${sky.minio.endpoint}
+    downloadPoint: ${sky.minio.downloadPoint}
     accessKeyId: ${sky.minio.accessKeyId}
     accessKeySecret: ${sky.minio.accessKeySecret}
     bucketName: ${sky.minio.bucket-name}

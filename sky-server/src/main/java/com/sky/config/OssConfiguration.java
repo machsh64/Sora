@@ -30,11 +30,12 @@ public class OssConfiguration {
     }
 
     // TODO 此方法可用于服务器部署时打开, 用本地oss节流
-    //@Bean
-    //@ConditionalOnMissingBean
+    @Bean
+    @ConditionalOnMissingBean
     public MinioUtil minioUtil(MinioProperties minioProperties) {
         log.info("开始创建Minion文件上传文件工具类对象: {}", minioProperties);
         return new MinioUtil(minioProperties.getEndpoint(),
+                minioProperties.getDownloadPoint(),
                 minioProperties.getAccessKeyId(),
                 minioProperties.getAccessKeySecret(),
                 minioProperties.getBucketName());

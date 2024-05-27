@@ -27,6 +27,7 @@ import java.security.NoSuchAlgorithmException;
 public class MinioUtil {
 
     private String endpoint;
+    private String downloadPoint;
     private String accessKey;
     private String secretKey;
     private String bucketName;
@@ -51,7 +52,7 @@ public class MinioUtil {
                 .contentType(file.getContentType())
                 .build());
 
-        return this.endpoint + "/" + this.bucketName + "/" + objectName;
+        return this.downloadPoint + "/" + this.bucketName + "/" + objectName;
     }
 
 }
